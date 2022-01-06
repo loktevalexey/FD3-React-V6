@@ -28,8 +28,10 @@
     if ( this.props.workMode==1 ) {
       return React.DOM.div(null,
         React.DOM.label({className:'VotesBlockAnswer'},
-          React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',onClick:this.answerClicked}),
-          React.DOM.span(null,this.props.text),
+          React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',onClick:this.answerClicked,}),
+          React.DOM.span({
+            //style:{color:(this.props.selectedAnswerCode===this.props.code)?'red':'blak'}
+          },this.props.text),
           this.props.freeanswer
             ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
               defaultValue:this.props.freeanswertext,onChange:this.freeAnswerTextChanged,

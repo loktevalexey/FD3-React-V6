@@ -15,6 +15,11 @@
 
   answerClicked: function(EO) {
     this.props.cbSelected(this.props.code);
+    
+    // как можно достучаться к атрибутам тега:
+    console.log(EO.target.getAttribute('value'));    // сработает с любым атрибутом
+    console.log(EO.target.getAttribute('data-zzz')); // сработает с любым атрибутом
+    console.log(EO.target.dataset.zzz);              // сработает только с data- атрибутами
   },
 
   freeAnswerTextChanged: function(EO) { 
@@ -27,7 +32,11 @@
     if ( this.props.workMode==1 ) {
       return React.DOM.div(null,
         React.DOM.label({className:'VotesBlockAnswer'},
-          React.DOM.input({type:'radio',value:this.props.code,name:'voteanswer',onClick:this.answerClicked}),
+          React.DOM.input({type:'radio',
+            value:this.props.code,name:'voteanswer',
+            onClick:this.answerClicked,
+            'data-zzz':this.props.code+100,
+          }),
           React.DOM.span(null,this.props.text),
           this.props.freeanswer
             ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
