@@ -34,7 +34,7 @@ class VotesAnswer extends React.Component {
         DOM.label({className:'VotesBlockAnswer'},
           DOM.input({type:'radio',value:this.props.code,name:'voteanswer',
             checked:(this.props.selectedAnswerCode==this.props.code),
-            onClick:this.answerClicked}),
+            onChange:this.answerClicked}),
           DOM.span(null,this.props.text),
           this.props.freeanswer
             ?DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
