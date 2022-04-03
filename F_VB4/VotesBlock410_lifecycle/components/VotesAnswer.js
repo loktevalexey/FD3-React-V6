@@ -17,10 +17,7 @@ class VotesAnswer extends React.Component {
     selectedAnswerCode: PropTypes.number, // может быть null, пока ни один ответ не выбран
   };
 
-  componentWillReceiveProps = (newProps)           => { if ( this.props.code==3 ) console.log('componentWillReceiveProps'); };
-  componentWillUpdate       = ()                   => { if ( this.props.code==3 ) console.log('componentWillUpdate');       };
   componentDidUpdate        = (oldProps, oldState) => { if ( this.props.code==3 ) console.log('componentDidUpdate');        };
-  componentWillMount        = ()                   => { if ( this.props.code==3 ) console.log('componentWillMount');        };
   componentDidMount         = ()                   => { if ( this.props.code==3 ) console.log('componentDidMount');         };
   componentWillUnmount      = ()                   => { if ( this.props.code==3 ) console.log('componentWillUnmount');      };
 
@@ -41,7 +38,7 @@ class VotesAnswer extends React.Component {
           <label className='VotesBlockAnswer'>
             <input type='radio' value={this.props.code} name='voteanswer'
               checked={this.props.selectedAnswerCode==this.props.code}
-              onClick={this.answerClicked}
+              onChange={this.answerClicked}
             />
             <span>{this.props.text}</span>
             {

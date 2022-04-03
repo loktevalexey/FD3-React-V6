@@ -14,12 +14,9 @@ class VotesQuestion extends React.Component {
     auxClassName: this.props.auxClassName,
   }
   
-  componentWillReceiveProps = (newProps)           => { console.log('componentWillReceiveProps'); };
-  componentWillUpdate       = ()                   => { console.log('componentWillUpdate');       };
-  componentDidUpdate        = (oldProps, oldState) => { console.log('componentDidUpdate');        };
-  componentWillMount        = ()                   => { console.log('componentWillMount');        };
-  componentDidMount         = ()                   => { console.log('componentDidMount');         };
-  componentWillUnmount      = ()                   => { console.log('componentWillUnmount');      };
+  componentDidUpdate        = (oldProps, oldState) => { console.log(this.state.auxClassName+' componentDidUpdate');        };
+  componentDidMount         = ()                   => { console.log(this.state.auxClassName+' componentDidMount');         };
+  componentWillUnmount      = ()                   => { console.log(this.state.auxClassName+' componentWillUnmount');      };
   
   render() {
     return <div className={'VotesQuestion '+this.state.auxClassName}>{this.props.question}</div>;
