@@ -11,11 +11,9 @@ class VotesQuestion extends React.Component {
   };
   
   state = {
-    auxClassName: this.props.auxClassName, // сработает при построении компонента (constructor+WM+DM)
+    auxClassName: this.props.auxClassName, // сработает при монтировании компонента
   }
   
-  //componentWillUpdate       = ()                   => { console.log('componentWillUpdate');       }; УСТАРЕЛ
-  componentWillMount        = ()                   => { console.log('componentWillMount');        };
   componentDidMount         = ()                   => { console.log('componentDidMount');         };
   componentWillUnmount      = ()                   => { console.log('componentWillUnmount');      };
   

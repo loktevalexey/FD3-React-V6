@@ -11,20 +11,19 @@ class VotesQuestion extends React.Component {
   };
   
   state = {
-    auxClassName: this.props.auxClassName, // сработает при построении компонента (constructor+WM+DM)
+    auxClassName: this.props.auxClassName, // сработает при монтировании компонента
   }
   
-  componentWillReceiveProps = (newProps) => {
-    console.log('componentWillReceiveProps'); 
-    this.setState({auxClassName:newProps.auxClassName,}); // сработает при обновлении компонента (WRP+WU+DU)
-  };
-
-  componentWillUpdate       = ()                   => { console.log('componentWillUpdate');       };
   componentDidUpdate        = (oldProps, oldState) => { console.log('componentDidUpdate');        };
-  componentWillMount        = ()                   => { console.log('componentWillMount');        };
   componentDidMount         = ()                   => { console.log('componentDidMount');         };
   componentWillUnmount      = ()                   => { console.log('componentWillUnmount');      };
   
+  componentDidUpdate = (oldProps, oldState) => { 
+    console.log('componentDidUpdate');     
+    if ( oldProps.auxClassName!==this.props.auxClassName )   
+      this.setState({auxClassName:this.props.auxClassName}); // сработает при обновлении компонента
+  };
+
   render() {
     return <input type="text" className={'VotesQuestion '+this.state.auxClassName} defaultValue={this.props.question} />;
   }
