@@ -7,7 +7,7 @@
     count: React.PropTypes.number.isRequired,
     text: React.PropTypes.string.isRequired,
     workMode: React.PropTypes.number.isRequired,
-    freeanswer: React.PropTypes.bool,
+    freeanswer: React.PropTypes.bool, // я - вариант со свободным ответом
     freeanswertext: React.PropTypes.string.isRequired,
   },
 

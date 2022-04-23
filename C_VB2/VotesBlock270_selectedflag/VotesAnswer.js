@@ -11,7 +11,7 @@
     freeanswertext: React.PropTypes.string.isRequired,
     cbFreeAnswerTextChanged: React.PropTypes.func.isRequired,
     cbSelected: React.PropTypes.func.isRequired,
-    isSelected: React.PropTypes.bool.isRequired,
+    isSelected: React.PropTypes.bool.isRequired, // выбран ли Я
   },
 
   answerClicked: function(EO) {

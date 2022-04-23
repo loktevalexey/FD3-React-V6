@@ -30,8 +30,8 @@
 
   cntPlus3: function() {
     this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
-    this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
-    this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
+    //this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
+    //this.setState( (prevState, props) => { return {cnt:prevState.cnt+1}; } );
   },
 
   render: function() {
