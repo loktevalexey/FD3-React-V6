@@ -34,7 +34,7 @@ class VotesAnswer extends React.Component {
           <label className='VotesBlockAnswer'>
             <input type='radio' value={this.props.code} name='voteanswer'
               checked={this.props.selectedAnswerCode==this.props.code}
-              onClick={this.answerClicked}
+              onChange={this.answerClicked}
             />
             <span>{this.props.text}</span>
             {

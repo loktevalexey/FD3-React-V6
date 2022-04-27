@@ -1,6 +1,8 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
 
+//import { withColorBackground } from './withColorBackground';
+
 import './VotesQuestion.css';
 
 class VotesQuestion extends React.Component {
@@ -16,3 +18,6 @@ class VotesQuestion extends React.Component {
 }
 
 export default VotesQuestion;
+
+// а можно экспортировать уже обёрнутую версию VotesQuestion
+//export default withColorBackground("cyan")(VotesQuestion);

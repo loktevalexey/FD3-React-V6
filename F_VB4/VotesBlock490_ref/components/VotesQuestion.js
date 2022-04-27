@@ -15,6 +15,7 @@ class VotesQuestion extends React.Component {
 
   newTextRef = null;
 
+  // в атрибуте ref нужного тега будем указывать ФУНКЦИЮ
   setNewTextRef = (ref) => {
     this.newTextRef=ref;
   };

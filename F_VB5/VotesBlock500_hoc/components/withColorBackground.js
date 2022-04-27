@@ -1,11 +1,12 @@
 ﻿import React from 'react';
 
-function withColorBackground(Component) {
+// вариант с возвратом функционального компонента
+function withColorBackground(Comp) {
     // HOC withColorBackground должен вернуть КОМПОНЕНТ
     // в данном случае возвращаем компонент в функциональном стиле
     return props => (
       <div style={{backgroundColor:"yellow"}}>
-        <Component {...props} />
+        <Comp {...props} />
       </div>
     );
 }
