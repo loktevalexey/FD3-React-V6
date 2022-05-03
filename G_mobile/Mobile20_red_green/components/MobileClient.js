@@ -15,18 +15,21 @@ class MobileClient extends React.Component {
     balance: this.props.balance,
   };
 
-  componentWillReceiveProps = (newProps) => {
-    console.log("MobileClient id="+this.props.id+" componentWillReceiveProps");
-    this.setState({balance:newProps.balance});
+  componentDidUpdate = (oldProps, oldState) => {
+    console.log("MobileClient id="+this.props.id+" componentDidUpdate");
+    if ( this.props.balance!==this.state.balance )
+      this.setState({balance:this.props.balance});
   };
 
   shouldComponentUpdate = (newProps,newState) => {
-    return (newProps.fio!=this.props.fio)||(newState.balance!=this.state.balance);
-    /*
-    let oldActive=this.state.balance>=0;
-    let newActive=newState.balance>=0;
-    return (newProps.fio!=this.props.fio)||(oldActive!=newActive);
-    */
+    return (newProps.fio!==this.props.fio)||(newProps.balance!==this.state.balance);
+    
+    // let oldActive=this.state.balance>=0;
+    // let newActive=newProps.balance>=0;
+    // return (newProps.fio!==this.props.fio)||(oldActive!==newActive); 
+    // оптимально, но некрасиво, т.к. this.state.balance часто содержит некорректный баланс
+    // лучше тогда в стейте хранить не balance а activeFlag
+    
   };
 
   render() {
