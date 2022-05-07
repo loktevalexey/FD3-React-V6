@@ -17,7 +17,7 @@ class VotesAnswer extends React.Component {
   };
 
   answerClicked(EO) {
-    //console.log('answerClicked: this = '+this);
+    console.log('answerClicked: this = '+this);
     this.props.cbSelected(this.props.code);
   }
 
