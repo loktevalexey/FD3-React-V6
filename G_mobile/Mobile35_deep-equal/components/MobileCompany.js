@@ -54,6 +54,16 @@ class MobileCompany extends React.Component {
     this.updateBalance(105,1);
   };
   
+  updateBalance3 = () => {
+    let newClients=this.state.clients.map( client => {
+      let newClient={...client};
+      if ( newClient.id==105 )
+        newClient.balance=5; // Сидорову ставим баланс ровно 5
+      return newClient;
+    } );
+    this.setState({clients:newClients});
+  };
+
   render() {
 
     console.log("MobileCompany render");
@@ -72,6 +82,7 @@ class MobileCompany extends React.Component {
         </div>
         <input type="button" value="Сидоров--" onClick={this.updateBalance1} />
         <input type="button" value="Сидоров++" onClick={this.updateBalance2} />
+        <input type="button" value="Сидоров=5" onClick={this.updateBalance3} />
       </div>
     )
     ;

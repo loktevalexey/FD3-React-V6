@@ -24,25 +24,28 @@ class MobileCompany extends React.Component {
   };
 
   shouldComponentUpdate = (newProps,newState) => {
-    if ( newState.name!=this.state.name )
+    if ( newState.name!==this.state.name )
       return true; // если название компании изменилось - перерисовываем
-    if ( newState.clients.length!=this.state.clients.length )
+    if ( newState.clients.length!==this.state.clients.length )
       return true; // если количество клиентов изменилось - перерисовываем
-    let clientsChanged=false; // из forEach нельзя сделать return - это будет return из функции forEach
-    newState.clients.forEach( (newClient,i) => {
+
+    let clientsChanged=newState.clients.some( (newClient,i) => {
       let oldClient=this.state.clients[i];
-      if ( oldClient.fio!=newClient.fio )
-        clientsChanged=true; // если фамилия клиента изменилась - перерисовываем
-      if ( oldClient.balance!=newClient.balance )
-        clientsChanged=true; // если баланс клиента изменился - перерисовываем
-      /*
+
+      if ( oldClient.fio!==newClient.fio )
+        return true; // если фамилия клиента изменилась - перерисовываем
+
+      if ( oldClient.balance!==newClient.balance )
+        return true; // если баланс клиента изменился - перерисовываем
+
       // с балансом вот так было бы оптимальнее, но нарушаются принцип DRY, принцип единственной ответственности, инкапсуляция
-      let oldActive=oldClient.balance>=0;
-      let newActive=newClient.balance>=0;
-      if ( oldActive!=newActive )
-        clientsChanged=true; // если признак активности/блокировки клиента изменился - перерисовываем
-      */
-    } );
+      // let oldActive=oldClient.balance>=0;
+      // let newActive=newClient.balance>=0;
+      // if ( oldActive!==newActive )
+      //   return true; // если признак активности/блокировки клиента изменился - перерисовываем
+
+    } )
+
     if ( clientsChanged )
       return true;
     return false; // раз интересующей нас разницы не нашлось - не перерисовываем
@@ -73,6 +76,16 @@ class MobileCompany extends React.Component {
   updateBalance2 = () => {
     this.updateBalance(105,1);
   };
+
+  updateBalance3 = () => {
+    let newClients=this.state.clients.map( client => {
+      let newClient={...client};
+      if ( newClient.id==105 )
+        newClient.balance=5; // Сидорову ставим баланс ровно 5
+      return newClient;
+    } );
+    this.setState({clients:newClients});
+  };
   
   render() {
 
@@ -92,6 +105,7 @@ class MobileCompany extends React.Component {
         </div>
         <input type="button" value="Сидоров--" onClick={this.updateBalance1} />
         <input type="button" value="Сидоров++" onClick={this.updateBalance2} />
+        <input type="button" value="Сидоров=5" onClick={this.updateBalance3} />
       </div>
     )
     ;

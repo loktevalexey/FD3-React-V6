@@ -15,14 +15,13 @@ class MobileClient extends React.Component {
     balance: this.props.balance,
   };
 
-  componentWillReceiveProps = (newProps) => {
-    this.setState({balance:newProps.balance});
+  componentDidUpdate = (oldProps, oldState) => {
+    if ( this.props.balance!==this.state.balance )
+      this.setState({balance:this.props.balance});
   };
 
   shouldComponentUpdate = (newProps,newState) => {
-    let oldActive=this.state.balance>=0;
-    let newActive=newState.balance>=0;
-    return (newProps.fio!=this.props.fio)||(oldActive!=newActive);
+    return (newProps.fio!==this.props.fio)||(newProps.balance!==this.state.balance);
   };
 
   render() {
