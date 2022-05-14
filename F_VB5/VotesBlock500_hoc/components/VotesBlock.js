@@ -63,7 +63,7 @@ class VotesBlock extends React.Component {
       />
     );
 
-    let VotesQuestionWithBG=withColorBackground(VotesQuestion);
+    const VotesQuestionWithBG=withColorBackground(VotesQuestion);
 
     return (
       <div className='VotesBlock'>

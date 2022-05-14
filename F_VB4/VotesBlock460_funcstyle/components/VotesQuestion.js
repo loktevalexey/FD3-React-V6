@@ -13,22 +13,24 @@ VotesQuestion.propTypes = {
 
 export default VotesQuestion;
 
+/////////////////////////////////////////////////////////////////////////////////////////
+
 // если propTypes не нужны, можно короче (экспортируется безымянная функция):
-/*
-import React from 'react';
 
-import './VotesQuestion.css';
+// import React from 'react';
 
-export default props => {
-  return <div className='VotesQuestion'>{props.question}</div>;
-}
-*/
+// import './VotesQuestion.css';
+
+// export default props => {
+//   return <div className='VotesQuestion'>{props.question}</div>;
+// };
+
+/////////////////////////////////////////////////////////////////////////////////////////
 
 // если всё что делает render - это return (т.е. нет никакой логики перед return), можно ещё короче:
-/*
-import React from 'react';
 
-import './VotesQuestion.css';
+// import React from 'react';
 
-export default props => <div className='VotesQuestion'>{props.question}</div>;
-*/
+// import './VotesQuestion.css';
+
+// export default props => <div className='VotesQuestion'>{props.question}</div>;
