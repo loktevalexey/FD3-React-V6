@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import Page_About from './Page_About';
 import Page_Company from './Page_Company';
@@ -12,12 +11,12 @@ class PagesRouter extends React.Component {
   render() {
 
     return (
-      <div>
-        <Route path="/" exact component={Page_About} />
-        <Route path="/company" component={Page_Company} />
-        <Route path="/clients" component={Page_Clients} />
-        <Route path="/client/:clid" component={Page_Client} />
-      </div>
+      <Routes>
+        <Route path="/" element={<Page_About/>} />
+        <Route path="/company" element={<Page_Company/>} />
+        <Route path="/clients" element={<Page_Clients/>} />
+        <Route path="/client/:clid" element={<Page_Client/>} />
+      </Routes>
     );
     
   }

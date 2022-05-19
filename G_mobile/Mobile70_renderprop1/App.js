@@ -3,10 +3,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Buttons from './components/Blocks';
+import Blocks from './components/Blocks';
 
 ReactDOM.render(
-  <Buttons />
+  <Blocks />
   , document.getElementById('container') 
 );
 
