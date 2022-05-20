@@ -3,7 +3,7 @@ import isoFetch from 'isomorphic-fetch';
 
 let withDataLoad = (fetchConfig,propName) => Component => {
 
-    class ComponentWithDataLoad extends React.PureComponent {
+    class ComponentWithDataLoad extends React.Component {
 
         componentDidMount() {
           this.loadData();
@@ -11,17 +11,16 @@ let withDataLoad = (fetchConfig,propName) => Component => {
       
         state = {
           dataReady: false, // готовы ли данные
-          combinedProps: null, // исходные пропсы, переданные HOC-у, плюс пропс propName с загруженными данными
         };
       
-        fetchError = (errorMessage) => {
-          console.error(showStr);
+        fetchError = errorMessage => {
+          console.error(errorMessage);
         };
       
-        fetchSuccess = (loadedData) => {
+        fetchSuccess = loadedData => {
           this.setState({
             dataReady:true,
-            combinedProps:{...this.props,[propName]:loadedData},
+            loadedData:loadedData,
           });
         };
       
@@ -45,14 +44,14 @@ let withDataLoad = (fetchConfig,propName) => Component => {
       
           if ( !this.state.dataReady )
             return <div>загрузка данных...</div>;
-      
-          return <Component {...this.state.combinedProps} /> ;
+          
+          let compProps={...this.props,[propName]:this.state.loadedData};
+          return <Component {...compProps} /> ;
         }
       
       }
 
       return ComponentWithDataLoad;
-
 
 }
 

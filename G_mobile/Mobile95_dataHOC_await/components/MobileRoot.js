@@ -13,8 +13,8 @@ class MobileRoot extends React.PureComponent {
     },
   };
 
-  // HOC возвращает каждый раз НОВЫЙ, обёрнутый компонент
-  // поэтому оборачивать в HOC лучше не внутри render, чтобы не рендерить каждый раз НОВЫЙ компонент
+  // HOF возвращает каждый раз НОВЫЙ, обёрнутый компонент
+  // поэтому получать HOC лучше не внутри render, чтобы не рендерить каждый раз НОВЫЙ компонент
   MobileCompanyWithData=withDataLoad(this.fetchConfig,"companyData")(MobileCompany);
 
   render() {

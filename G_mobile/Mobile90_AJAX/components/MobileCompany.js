@@ -26,7 +26,7 @@ class MobileCompany extends React.PureComponent {
   };
 
   fetchError = (errorMessage) => {
-    console.error(showStr);
+    alert(showStr);
   };
 
   fetchSuccess = (loadedData) => {
@@ -38,6 +38,29 @@ class MobileCompany extends React.PureComponent {
     });
   };
 
+  loadData = async () => {
+
+    const response=await isoFetch("http://fe.it-academy.by/TestFetch.php", {
+      method: 'post',
+      headers: {
+        "Accept": "application/json",
+      },
+    });
+    // в response - http-ответ
+    if ( !response.ok ) {
+      this.fetchError("fetch error " + response.status);
+    }
+    else {
+      const data=await response.json();
+      // в data - пришедшие в ответе данные
+      this.fetchSuccess(data);
+    }
+
+  };
+
+  /*
+
+  // то же самое через цепочку .then/.catch
   loadData = () => {
 
     isoFetch("http://fe.it-academy.by/TestFetch.php", {
@@ -61,6 +84,8 @@ class MobileCompany extends React.PureComponent {
     ;
 
   };
+
+  */
 
   render() {
 
