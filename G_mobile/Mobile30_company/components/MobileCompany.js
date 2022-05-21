@@ -44,10 +44,10 @@ class MobileCompany extends React.Component {
       // if ( oldActive!==newActive )
       //   return true; // если признак активности/блокировки клиента изменился - перерисовываем
 
-    } )
-
+    } );
     if ( clientsChanged )
       return true;
+
     return false; // раз интересующей нас разницы не нашлось - не перерисовываем
   };
   
