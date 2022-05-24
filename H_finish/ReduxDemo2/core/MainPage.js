@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import combinedReducer from '../redux/reducers.js';
 import CounterButton from '../components/CounterButton/CounterButton';
 
-let store=createStore(combinedReducer);
+const store=createStore(combinedReducer);
 
 class MainPage extends React.PureComponent {
 

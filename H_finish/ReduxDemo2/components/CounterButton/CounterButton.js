@@ -13,7 +13,9 @@ class CounterButton extends React.PureComponent {
     counters: PropTypes.object.isRequired, // передано из Redux
   };
 
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+
     // изначально счётчика с идентификатором counterid нет
     // создадим
     this.props.dispatch( counterButton_create(this.props.counterid) );
