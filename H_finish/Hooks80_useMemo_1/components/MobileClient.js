@@ -1,0 +1,15 @@
+﻿import React from 'react';
+
+import "./MobileClient.css";
+
+export default ({fio,balance}) => { // деструктуризация - из аргумента props ключи fio и balance сразу превращюется в переменные
+
+  console.log("render MobileClient "+fio);
+
+  return (
+    <div className='MobileClient'>
+      <span className='MobileClientBalance'>{balance}</span>
+      <span className='MobileClientFIO'>{fio}</span>
+    </div>
+  );
+};
