@@ -2,6 +2,9 @@
 
 import "./MobileClient.css";
 
+// export default props => { 
+//   let {fio,balance} = props;
+
 export default ({fio,balance}) => { // деструктуризация - из аргумента props ключи fio и balance сразу превращюется в переменные
 
   console.log("render MobileClient "+fio);
