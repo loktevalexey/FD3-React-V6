@@ -5,7 +5,7 @@ import './VotesBlock.css';
 import VotesQuestion from './VotesQuestion';
 import VotesAnswer from './VotesAnswer';
 
-var VotesBlock = React.createClass({
+const VotesBlock = React.createClass({
 
   displayName: 'VotesBlock',
 
@@ -54,7 +54,7 @@ var VotesBlock = React.createClass({
 
   render: function() {
 
-    var answersCode=this.props.answers.map( v =>
+    const answersCode=this.props.answers.map( v =>
       React.createElement(VotesAnswer, {key:v.code,
         text:v.text, count:v.count, code:v.code, 
         freeanswer:v.freeanswer, freeanswertext:this.state.freeanswertext, 

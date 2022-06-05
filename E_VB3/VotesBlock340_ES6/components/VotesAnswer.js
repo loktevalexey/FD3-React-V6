@@ -2,7 +2,7 @@
 
 import './VotesAnswer.css';
 
-var VotesAnswer = React.createClass({
+const VotesAnswer = React.createClass({
 
   displayName: 'VotesAnswer',
 

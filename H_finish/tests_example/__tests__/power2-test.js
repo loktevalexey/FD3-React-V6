@@ -1,6 +1,4 @@
-﻿"use strict";
-
-import {power2} from '../modules/power2';
+﻿import {power2} from '../modules/power2';
 
 test('проверка возведения 2 в разные степени', () => {
 

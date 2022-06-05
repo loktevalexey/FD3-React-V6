@@ -20,7 +20,7 @@ class MobileClients extends React.PureComponent {
   
   render() {
 
-    var clientsCode=this.props.clients.map( client =>
+    const clientsCode=this.props.clients.map( client =>
       <MobileClient key={client.id} info={client}  />
     );
 

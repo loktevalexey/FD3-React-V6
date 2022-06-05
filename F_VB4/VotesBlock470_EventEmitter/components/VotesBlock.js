@@ -27,7 +27,7 @@ class VotesBlock extends React.Component {
     selectedAnswerCode: null,
     freeanswertext:this.props.deffreeanswertext,
     workMode:this.props.startWorkMode,
-  }
+  };
 
   componentDidMount = () => {
     voteEvents.addListener('EAnswerClicked',this.answerSelected);
@@ -42,7 +42,7 @@ class VotesBlock extends React.Component {
   answerSelected = (code) => {
     console.log('выбран ответ с кодом '+code);
     this.setState( {selectedAnswerCode:code} );
-  }
+  };
 
   vote = () => {
     console.log('голосование завершено, выбран ответ с кодом '+this.state.selectedAnswerCode);
@@ -53,16 +53,16 @@ class VotesBlock extends React.Component {
     } );
 
     this.setState( {workMode:2} );
-  }
+  };
 
   freeAnswerTextChanged = (fat) => { 
     console.log('VotesBlock: текст свободного ответа изменён - '+fat); 
     this.setState( {freeanswertext:fat} );
-  }
+  };
 
   render() {
 
-    var answersCode=this.props.answers.map( v =>
+    const answersCode=this.props.answers.map( v =>
       <VotesAnswer key={v.code}
         text={v.text} count={v.count} code={v.code}
         freeanswer={v.freeanswer} freeanswertext={this.state.freeanswertext}

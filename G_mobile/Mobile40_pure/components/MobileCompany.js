@@ -52,7 +52,7 @@ class MobileCompany extends React.PureComponent {
 
     console.log("MobileCompany render");
 
-    var clientsCode=this.state.clients.map( client =>
+    const clientsCode=this.state.clients.map( client =>
       <MobileClient key={client.id} info={client}  />
     );
 

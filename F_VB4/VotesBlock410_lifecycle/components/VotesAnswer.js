@@ -23,12 +23,12 @@ class VotesAnswer extends React.Component {
 
   answerClicked = (EO) => {
     this.props.cbSelected(this.props.code);
-  }
+  };
 
   freeAnswerTextChanged = (EO) => { 
     console.log('VotesAnswer: текст свободного ответа изменён - '+EO.target.value); 
     this.props.cbFreeAnswerTextChanged(EO.target.value);
-  }
+  };
 
   render() {
 

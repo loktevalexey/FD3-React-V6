@@ -52,7 +52,7 @@ class MobileCompany extends React.Component {
 
     console.log("MobileCompany render");
 
-    var clientsCode=this.state.clients.map( c =>
+    const clientsCode=this.state.clients.map( c =>
       <MobileClient key={c.id} id={c.id} fio={c.fio} balance={c.balance} />
     );
 

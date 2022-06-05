@@ -9,11 +9,11 @@ class Blocks extends React.PureComponent {
 
   button1Clicked = () => {
     alert("кнопка 1 нажата");
-  }
+  };
 
   button2Clicked = () => {
     alert("кнопка 2 нажата");
-  }
+  };
 
   render() {
 

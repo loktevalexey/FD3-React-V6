@@ -57,7 +57,7 @@ class VotesBlock extends React.Component {
 
   render() {
 
-    var answersCode=this.props.answers.map( v =>
+    const answersCode=this.props.answers.map( v =>
       React.createElement(VotesAnswer, {key:v.code,
         text:v.text, count:v.count, code:v.code, 
         freeanswer:v.freeanswer, freeanswertext:this.state.freeanswertext, 

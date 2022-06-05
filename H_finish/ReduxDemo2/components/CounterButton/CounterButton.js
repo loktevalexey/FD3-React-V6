@@ -23,11 +23,11 @@ class CounterButton extends React.PureComponent {
 
   incCounter = () => {
     this.props.dispatch( counterButton_add(this.props.counterid,1) );
-  }
+  };
 
   decCounter = () => {
     this.props.dispatch( counterButton_add(this.props.counterid,-1) );
-  }
+  };
   
   render() {
 

@@ -92,7 +92,7 @@ class MobileCompany extends React.PureComponent {
     if ( !this.state.dataReady )
       return <div>загрузка данных...</div>;
 
-    var clientsCode=this.state.clients.map( client =>
+    const clientsCode=this.state.clients.map( client =>
       <MobileClient key={client.id} info={client}  />
     );
 
