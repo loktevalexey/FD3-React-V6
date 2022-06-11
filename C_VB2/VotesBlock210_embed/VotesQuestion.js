@@ -7,7 +7,10 @@
   },
 
   render: function() {
-    return React.DOM.div( {className:'VotesQuestion'}, this.props.question );
+    return React.DOM.div( 
+      {className:'VotesQuestion'}, 
+      this.props.question
+      );
   },
 
 });
