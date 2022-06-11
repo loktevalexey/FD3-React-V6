@@ -1,10 +1,11 @@
 ﻿// Remember that this does not account for any CSS transforms applied to the canvas
 
 function Transform() {
-  this.reset();
+  this.reset(); 
 }
 
 Transform.prototype.reset = function() {
+
   this.m = [1,0,0,1,0,0];
   console.log(7);
 };

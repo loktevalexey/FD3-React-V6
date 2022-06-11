@@ -5,13 +5,12 @@
 div.PSourceRunning
 {
 /*  background-color: rgb(255,150,150);*/
-  position: absolute;
+  position: relative;
   z-index: -1;
 /*  transition-duration: 2s;*/
   left: 200px;
   top: 100px;
   width: 100px;
-  height: 100px;
   color: red;
 }
 
