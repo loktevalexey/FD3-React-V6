@@ -33,14 +33,18 @@
       return React.DOM.div(null,
         React.DOM.label({className:'VotesBlockAnswer'},
           React.DOM.input({type:'radio',
-            value:this.props.code,name:'voteanswer',
+            value:this.props.code,
+            name:'voteanswer',
             onClick:this.answerClicked,
             'data-zzz':this.props.code+100,
           }),
           React.DOM.span(null,this.props.text),
           this.props.freeanswer
-            ?React.DOM.input({type:'text',name:'votefreeanswer',className:'FreeAnswer',
-              defaultValue:this.props.freeanswertext,onChange:this.freeAnswerTextChanged})
+            ?React.DOM.input({type:'text',name:'votefreeanswer',
+              className:'FreeAnswer',
+              defaultValue:this.props.freeanswertext,
+              onChange:this.freeAnswerTextChanged
+            })
             :null
         ),
       );

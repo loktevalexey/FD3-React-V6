@@ -26,11 +26,13 @@
       {text:'избегаю',code:3,count:444},
       {text:'другой ответ',code:4,count:444,freeanswer:true},
     ];
-    var defaultFreeAnswerText="???";
 
     ReactDOM.render(
-      React.createElement(VotesBlock,{question:questionText,answers:answersArr,
-        deffreeanswertext: defaultFreeAnswerText,workMode:1}), 
+      React.createElement(VotesBlock,{question:questionText,
+        answers:answersArr,
+        deffreeanswertext: "???", // def* start* init*
+        workMode:1
+      }), 
       document.getElementById('container') 
     );
 

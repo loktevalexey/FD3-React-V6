@@ -24,7 +24,8 @@
     var answersCode=this.props.answers.map( v =>
       React.createElement(VotesAnswer, {key:v.code,
         text:v.text, count:v.count, code:v.code, 
-        freeanswer:v.freeanswer, freeanswertext:"???", cbFreeAnswerTextChanged:this.freeAnswerTextChanged,
+        freeanswer:v.freeanswer, freeanswertext:"???", 
+        cbFreeAnswerTextChanged:this.freeAnswerTextChanged,
         workMode:this.props.workMode,
       })
     );

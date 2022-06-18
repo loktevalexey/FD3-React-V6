@@ -53,7 +53,8 @@
     return React.DOM.div( {className:'VotesBlock'}, 
       React.createElement(VotesQuestion, {question:this.props.question} ),
       React.DOM.div( {className:'Answers'}, answersCode ),
-      React.DOM.input( {type:'button',value:'выбрать вариант 4',onClick:this.selectAnswer4} ),
+      React.DOM.input( {type:'button',value:'выбрать вариант 4',
+        onClick:this.selectAnswer4} ),
     );
 
   },
