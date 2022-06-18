@@ -22,6 +22,7 @@
   freeAnswerTextChanged: function(fat) { 
     console.log('VotesBlock: текст свободного ответа изменён - '+fat); 
     this.setState( {freeanswertext:fat} );
+    //console.log("VotesBlock: в стейте сразу после вызова setState - "+this.state.freeanswertext);
   },
 
   render: function() {
