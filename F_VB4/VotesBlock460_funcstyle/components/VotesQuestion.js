@@ -5,7 +5,7 @@ import './VotesQuestion.css';
 
 const VotesQuestion = props => {
   return <div className='VotesQuestion'>{props.question}</div>;
-}
+};
 
 VotesQuestion.propTypes = {
   question: PropTypes.string.isRequired,

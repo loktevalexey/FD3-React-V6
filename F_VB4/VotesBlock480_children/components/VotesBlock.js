@@ -69,6 +69,10 @@ class VotesBlock extends React.Component {
         <ColorFrame color="red">
           <div className='Answers'>{answersCode}</div>
         </ColorFrame>
+        {/* <ColorFrame color="red" cld={<div className='Answers'>{answersCode}</div>} /> */}
+        {/* <ColorFrame color="red">
+          {2}
+        </ColorFrame> */}
         {
           ((this.state.workMode==1)&&this.state.selectedAnswerCode) &&
           <input type='button' value='проголосовать' onClick={this.vote} />
