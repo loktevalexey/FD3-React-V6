@@ -62,7 +62,10 @@ class MobileCompany extends React.PureComponent {
 
     const clientsCode=this.state.clients.map( client => {
         let FIO={fam:client.fam,im:client.im,otch:client.otch};
-        return <MobileClient key={client.id} id={client.id} FIO={FIO} balance={client.balance} />;
+        return <MobileClient key={client.id} 
+          id={client.id} 
+          FIO={FIO} 
+          balance={client.balance} />;
       }
     );
 

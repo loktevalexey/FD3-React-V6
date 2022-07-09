@@ -9,12 +9,8 @@ class VotesQuestion extends React.Component {
     question: PropTypes.string.isRequired,
   };
   
-  constructor(props) {
-    super(props);
-
-    // в атрибуте ref нужного тега будем указывать вот эту переменную-ссылку
-    this.newTextRef = React.createRef();
-  }  
+  // в атрибуте ref нужного тега будем указывать вот эту переменную-ссылку
+  newTextRef = React.createRef();
 
   state = {
     question: this.props.question,
