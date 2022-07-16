@@ -2,7 +2,7 @@
 
 import "./MobileClient.css";
 
-export default ({fio,balance}) => { // деструктуризация - из аргумента props ключи fio и balance сразу превращюется в переменные
+export default ({fio,balance}) => {
 
   const memoizeedRenderResult=useMemo(
     ()=>{
