@@ -9,6 +9,7 @@ function personReducer(state, action) {
       case 'genderF':
         return {...state, gender: "F"};
       default:
+        //return state;
         throw new Error('unknown action');
     }
 }

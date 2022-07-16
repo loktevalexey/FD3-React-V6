@@ -6,7 +6,10 @@ import "./Anketa.css";
 
 export default props => {
 
-  const [personInfo, personDispatch] = useReducer(personReducer, {age:25,gender:'M'});
+  const [personInfo, personDispatch] = useReducer(
+    personReducer, 
+     {age:25,gender:'M'}
+  );
 
   return (
     <div>

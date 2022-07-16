@@ -13,7 +13,7 @@ export default props => {
           return response.json();
         } )
         .then ( info => {
-          console.log(info);
+          console.log(age,info);
         } )
     },
     [] // массив зависимостей пуст - функция выполнится один раз, при монтировании компонента
