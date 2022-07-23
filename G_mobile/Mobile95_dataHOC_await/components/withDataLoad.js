@@ -45,7 +45,10 @@ let withDataLoad = (fetchConfig,propName) => Component => {
           if ( !this.state.dataReady )
             return <div>загрузка данных...</div>;
           
-          let compProps={...this.props,[propName]:this.state.loadedData};
+          let compProps={
+            ...this.props,
+            [propName]:this.state.loadedData
+          };
           return <Component {...compProps} /> ;
         }
       
